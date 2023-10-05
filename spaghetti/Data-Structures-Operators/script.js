@@ -11,14 +11,7 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  orderDelivery: function (obj) {
-    console.log(obj);
-  },
-
+  time: ["22:10"],
   openingHours: {
     thu: {
       open: 12,
@@ -33,40 +26,76 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({
+    time = "21:30",
+    address,
+    starterIndex,
+    mainIndex = 2,
+  }) {
+    console.log(
+      `order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
+
+restaurant.orderDelivery({
+  time: "22:30",
+  address: "mirpur dhaka, bangladesh",
+  mainIndex: 2,
+  starterIndex: 3,
+});
+
+// The Spread Operator
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArray = [1, 2, 3, ...arr];
+console.log(newArray);
+console.log(...newArray);
+
+const newMenu = [...restaurant.mainMenu, "panta ভাত"];
+console.log(newMenu);
+
+// copy array
+const mainMenuCopy = [...restaurant.mainMenu];
 
 // #444 Destructuring Objects
 
 // ........................
-const { name, openingHours, starterMenu } = restaurant;
-console.log(name, openingHours, starterMenu);
+// const { name, openingHours, starterMenu } = restaurant;
+// console.log(name, openingHours, starterMenu);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  starterMenu: menuItem,
-} = restaurant;
-console.log(restaurantName, hours, menuItem);
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   starterMenu: menuItem,
+// } = restaurant;
+// console.log(restaurantName, hours, menuItem);
 
-// Default Values
-// menuTest is not in the array/object
-const { menuTest = [], starterMenu: starters = [] } = restaurant;
-console.log(menuTest, starters);
+// // Default Values
+// // menuTest is not in the array/object
+// const { menuTest = [], starterMenu: starters = [] } = restaurant;
+// console.log(menuTest, starters);
 
 // Mutating variables
-let a = 111;
-let b = 999;
-let c = 1;
-const obj = { a: 23, b: 7, c: 14 };
+// let a = 111;
+// let b = 999;
+// let c = 1;
+// const obj = { a: 23, b: 7, c: 14 };
 
-({ a, b, c } = obj);
-console.log(a, b, c);
+// ({ a, b, c } = obj);
+// console.log(a, b, c);
 
-// TODO: Nested Objects
-const {
-  fri: { open: abc, close: cba },
-} = openingHours;
-console.log(abc, cba);
+// // TODO: Nested Objects
+// const {
+//   fri: { open: abc, close: cba },
+// } = openingHours;
+// console.log(abc, cba);
 
 // #fff Destructuring Array
 
