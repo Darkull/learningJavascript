@@ -52,7 +52,23 @@ restaurant.orderDelivery({
   starterIndex: 3,
 });
 
-// Rest Pattern And Parameters
+// TODO: Rest Pattern And Parameters
+
+// SPREAD, because on LEFT side of = (assignment operator)
+const arrr = [1, 2, 3, 4, 5];
+const sprdArr = [1, 2, ...[84, 42]];
+
+console.log(sprdArr);
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFoods] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFoods);
 
 // TODO: The Spread Operator
 // const arr = [7, 8, 9];
