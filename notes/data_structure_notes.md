@@ -7,9 +7,9 @@
 
 ## SPREAD, because on LEFT side of = (assignment operator)
 
-`const arrr = [1, 2, 3, 4, 5];
-const sprdArr = [1, 2, ...[84, 42]];
-console.log(sprdArr);``
+` const arrr = [1, 2, 3, 4, 5];
+  const sprdArr = [1, 2, ...[84, 42]];
+  console.log(sprdArr);`
 
 ## REST, because on LEFT side of =
 
@@ -20,5 +20,4 @@ const [pizza, , risotto, ...otherFoods] = [
 ...restaurant.mainMenu,
 ...restaurant.starterMenu,
 ];
-console.log(pizza, risotto, otherFoods);
-``
+console.log(pizza, risotto, otherFoods);`
