@@ -52,38 +52,50 @@ restaurant.orderDelivery({
   starterIndex: 3,
 });
 
-// The Spread Operator
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// Rest Pattern And Parameters
 
-const newArray = [1, 2, 3, ...arr];
-console.log(newArray);
-console.log(...newArray);
+// TODO: The Spread Operator
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-const newMenu = [...restaurant.mainMenu, "panta ভাত"];
-console.log(newMenu);
+// const newArray = [1, 2, 3, ...arr];
+// console.log(newArray);
+// console.log(...newArray);
 
-// copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+// const newMenu = [...restaurant.mainMenu, "panta ভাত"];
+// console.log(newMenu);
 
-// join/merge 2 array
-const mergedMenu = [...mainMenuCopy, ...newMenu];
-console.log(mergedMenu);
-console.log(...mergedMenu);
+// // copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// // join/merge 2 array
+// const mergedMenu = [...mainMenuCopy, ...newMenu];
+// console.log(mergedMenu);
+// console.log(...mergedMenu);
 
 // TODO: Itterables: arrays, strings, maps, sets. Not Objects.
 
 // multiple values, separated by a comma only expected when passing arguments into a function or building a new array
 
-const ingredients = [
-  prompt("Let's make pasta! Ingredient 1?"),
-  prompt("Ingredient 2?"),
-  prompt("Ingredient 3?"),
-];
-restaurant.orderPasta(...ingredients);
+// TODO: Real world example
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt("Ingredient 2?"),
+//   prompt("Ingredient 3?"),
+// ];
+// console.log(ingredients);
+// restaurant.orderPasta(...ingredients);
 
-console.log(ingredients);
+// console.log(ingredients);
+
+// const newRestaurant = { shobji: "lal shakh", ...restaurant, darkul: "alif" };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = "mojar hotel";
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 // #444 Destructuring Objects
 
