@@ -40,6 +40,9 @@ const restaurant = {
       `order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delecious pasta with ${ing1}, ${ing2}, ${ing3} `);
+  },
 };
 
 restaurant.orderDelivery({
@@ -63,6 +66,24 @@ console.log(newMenu);
 
 // copy array
 const mainMenuCopy = [...restaurant.mainMenu];
+
+// join/merge 2 array
+const mergedMenu = [...mainMenuCopy, ...newMenu];
+console.log(mergedMenu);
+console.log(...mergedMenu);
+
+// TODO: Itterables: arrays, strings, maps, sets. Not Objects.
+
+// multiple values, separated by a comma only expected when passing arguments into a function or building a new array
+
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt("Ingredient 2?"),
+  prompt("Ingredient 3?"),
+];
+restaurant.orderPasta(...ingredients);
+
+console.log(ingredients);
 
 // #444 Destructuring Objects
 
