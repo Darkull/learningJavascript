@@ -5,14 +5,15 @@
 
 # Rest Pattern And Parameters
 
-- SPREAD, because on LEFT side of = (assignment operator)
-  const arrr = [1, 2, 3, 4, 5];
-  const sprdArr = [1, 2, ...[84, 42]];
-  console.log(sprdArr);
+## SPREAD, because on LEFT side of = (assignment operator)
 
-- REST, because on LEFT side of =
+`const arrr = [1, 2, 3, 4, 5];
+const sprdArr = [1, 2, ...[84, 42]];
+console.log(sprdArr);``
 
-const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+## REST, because on LEFT side of =
+
+`const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
 console.log(a, b, others);
 
 const [pizza, , risotto, ...otherFoods] = [
@@ -20,3 +21,4 @@ const [pizza, , risotto, ...otherFoods] = [
 ...restaurant.starterMenu,
 ];
 console.log(pizza, risotto, otherFoods);
+``
