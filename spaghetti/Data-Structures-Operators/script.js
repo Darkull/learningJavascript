@@ -54,6 +54,8 @@ restaurant.orderDelivery({
 
 // TODO: Rest Pattern And Parameters
 
+// Destructuring
+
 // SPREAD, because on LEFT side of = (assignment operator)
 const arrr = [1, 2, 3, 4, 5];
 const sprdArr = [1, 2, ...[84, 42]];
@@ -69,6 +71,10 @@ const [pizza, , risotto, ...otherFoods] = [
   ...restaurant.starterMenu,
 ];
 console.log(pizza, risotto, otherFoods);
+
+// objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 
 // TODO: The Spread Operator
 // const arr = [7, 8, 9];

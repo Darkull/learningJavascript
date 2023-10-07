@@ -15,9 +15,11 @@
 
 `const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
 console.log(a, b, others);
-
 const [pizza, , risotto, ...otherFoods] = [
 ...restaurant.mainMenu,
 ...restaurant.starterMenu,
 ];
 console.log(pizza, risotto, otherFoods);`
+
+- Rest element must be the last element.
+- thats why, there can be only one rest element in any destructuring assignment.
