@@ -4,7 +4,7 @@
 const flights =
   "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
-// Data needed for first part of the section
+// Data needed lfor first part of the section
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -43,6 +43,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delecious pasta with ${ing1}, ${ing2}, ${ing3} `);
   },
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
+  },
 };
 
 restaurant.orderDelivery({
@@ -52,29 +56,52 @@ restaurant.orderDelivery({
   starterIndex: 3,
 });
 
-// TODO: Rest Pattern And Parameters
+/*******************************************/
+/* TODO: Short Circuiting (&& and _) */
+/*******************************************/
 
-// Destructuring
+/*******************************************/
+/* TODO: Rest Pattern And Parameters */
+/*******************************************/
 
-// SPREAD, because on LEFT side of = (assignment operator)
-const arrr = [1, 2, 3, 4, 5];
-const sprdArr = [1, 2, ...[84, 42]];
+// //
 
-console.log(sprdArr);
+// // Destructuring
 
-// REST, because on LEFT side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
-console.log(a, b, others);
+// // SPREAD, because on LEFT side of = (assignment operator)
+// const arrr = [1, 2, 3, 4, 5];
+// const sprdArr = [1, 2, ...[84, 42]];
 
-const [pizza, , risotto, ...otherFoods] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFoods);
+// console.log(sprdArr);
 
-// objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// // REST, because on LEFT side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFoods] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFoods);
+
+// // objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// // 2. functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
+
+// const x = [3423, 342, 3423, 342];
+// add(...x);
+// add(343, 34);
+
+// restaurant.orderPizza("mushroom", "olive", "potato", "spinach");
 
 // TODO: The Spread Operator
 // const arr = [7, 8, 9];
