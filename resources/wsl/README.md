@@ -1,45 +1,28 @@
 # Project Initiator Script
-
-The Project Initiator Script is a Bash script designed to automate the process of creating new project folders with a template structure. It allows you to quickly set up a standardized project folder with predefined files and directories.
+The Project Initiator Script is a Bash script designed to streamline the process of setting up new web projects on WSL Ubuntu. With a single command, you can create a standardized project folder complete with essential files and directories, enabling you to kickstart your development process within seconds.
 
 ## Features
+- Automation: The script automates the creation of project folders, saving you time and effort.
+- Standardized Structure: Every project created with the script follows a predefined template structure, ensuring consistency across your work.
+- Quick Setup: Simply use the command sudo newproject <folder name> to initiate a new project with the specified folder name.
 
-- Creates a new project folder with the specified name.
-- Copies template files and directories into the new project folder.
-- Customizable template structure.
+## Installation
+To install the Project Initiator Script on WSL2 or Linux, follow these steps:
 
-## Prerequisites
+1. Download the WSL folder:
+    - Clone or download the WSL folder from this repository.
 
-- Bash (Unix Shell)
+2. Copy files to /usr/local/bin:
+    - Copy the bash_script_folder and project_initiator.sh files
+    to the /usr/local/bin directory.
+3. Execute the following commands in your Ubuntu shell:
+`sudo ln -s /usr/local/bin/project_initiator.sh /usr/local/bin/newproject
+`
 
-## Getting Started
+This creates a symbolic link named newproject. You can replace newproject with any desired command. This will be the command to run the script, for example, sudo newproject <folder name>.
 
-```bash
-git clone https://github.com/yourusername/project-initiator-script.git
-cd project-initiator-script
-chmod +x project_initiator.sh
-sudo ln -s /path/to/project_initiator.sh /usr/local/bin/newproject
-sudo newproject <folder_name>
-Replace <folder_name> with the desired name for the new project folder.
+`sudo chmod +x /usr/local/bin/project_initiator.sh
+`
+This command makes the script executable.
 
-Customization
-You can customize the template structure by modifying the project_initiator.sh script. Adjust the script to fit your project's specific requirements.
-
-License
-This project is licensed under the MIT License.
-
-Acknowledgments
-Inspired by the need for a quick and consistent project setup.
-Special thanks to the Bash scripting community.
-Contributing
-Feel free to contribute to the project by forking it and submitting pull requests.
-
-Issues
-If you encounter any issues or have questions, please open an issue.
-
-Happy coding!
-
-vbnet
-Copy code
-
-You can now copy and paste this block directly into your README file on GitHub. If you need any further adjustments, feel free to let me know!
+Now, you should be able to run the newproject command from anywhere using sudo newproject <folder_name>.
