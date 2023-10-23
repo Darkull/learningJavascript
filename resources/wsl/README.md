@@ -1,5 +1,4 @@
-This Script is created and Developed by Darkul
-# Project Initiator Script
+# Project Initiator Script --by Darkul
 The Project Initiator Script is a Bash script designed to streamline the process of setting up new web projects on WSL Ubuntu. With a single command, you can create a standardized project folder complete with essential files and directories, enabling you to kickstart your development process within seconds.
 
 ## Features
@@ -56,5 +55,3 @@ Feel free to contribute to the improvement of this script. If you encounter any 
 This project is licensed under the MIT License. See the License.md file for details.
 
 Start your web projects efficiently with the Project Initiator Script! Happy coding!
-
-#This Script is created and Developed by Darkul
