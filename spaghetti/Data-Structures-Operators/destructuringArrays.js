@@ -51,7 +51,7 @@ const restaurant = {
   },
 };
 
-restaurant.orderPizza("mushroom", "spinach");
+// ----------------- nullish coalescing operator ----------------------
 
 // ----------------- short circuting ----------------------
 
