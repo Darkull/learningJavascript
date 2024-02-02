@@ -51,7 +51,46 @@ const restaurant = {
   },
 };
 
+// ----------------- logical assignment operator ----------------------
+
+// const res1 = {
+//   name: "Capri Restaurant",
+//   numGuests: 0,
+// };
+
+// const res2 = {
+//   name: "Alif Restaurant",
+//   owner: "Alif Hossain",
+// };
+
+// checking if res has numGuests, if not then add one
+// res1.numGuests = res1.numGuests || 10;
+// res2.numGuests = res2.numGuests || 30;
+
+// // we can also do this with logical assignment operator
+// res1.numGuests ||= 10;
+// res2.numGuests ||= 30;
+
+// remember the 0 problem? it is a falesy value. we can  use nullish coalescing operator
+// with logical operator to fix it
+// res1.numGuests ??= 10;
+// res2.numGuests ??= 20;
+
+// if there is a owner, we will replace it to anonymous
+
+// res1.owner = res1.owner && "<ANONYMOUS>";
+// res2.owner = res2.owner && "<ANONYMOUS>";
+
+// // using the logical assignment operator and
+
+// res1.owner &&= "anonymous";
+// res2.owner &&= "anonymous";
+
+// console.log(res1, res2);
 // ----------------- nullish coalescing operator ----------------------
+// restaurant.numbguests = 0;
+// const guests = restaurant.numbguests ?? 10;
+// console.log(guests);
 
 // ----------------- short circuting ----------------------
 
