@@ -51,6 +51,98 @@ const restaurant = {
   },
 };
 
+// ----------------- Coding Challenge 01 ----------------------
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// // condition 1
+// const players1 = game.players[0];
+// const players2 = game.players[1];
+
+// // condition 2
+// const [gk] = game.players[0];
+// console.log(gk);
+
+// const [, ...fieldPlayers] = game.players[0];
+// console.log(fieldPlayers);
+
+// // condition 3
+// const allPlayers = game.players;
+// console.log(allPlayers);
+
+// // condition 4
+// const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+// console.log(players1Final);
+
+// // condition 5
+// const { team1, x: draw, team2 } = game.odds;
+// console.log(team1, draw, team2);
+
+// condition 6
+
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum = sum + numbers[i];
+//   }
+//   console.log(sum);
+// };
+
+// add(2, 2, 3);  // example
+
+// const printGoals = function (...playerName) {
+//   console.log(`Goals Scored: ${playerName.length} by ${playerName}`);
+// };
+
+// printGoals("alif", "darkul", "asif");
+
+// // condition 7
+// const winnerTeam = game.team1;
+// console.log(winnerTeam);
+
+// const { team1: highChanceWin, team2 } = game.odds;
+
+// winnerTeam &&
+//   console.log(`${winnerTeam} has won with the odds of ${highChanceWin}`);
+
 // ----------------- logical assignment operator ----------------------
 
 // const res1 = {
