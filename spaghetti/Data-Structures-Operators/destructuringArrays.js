@@ -1,5 +1,26 @@
 "use strict";
 
+const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+const openingHours = {
+  [weekDays[1]]: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  [`day: ${3 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const { tue, fri, sat } = openingHours;
+console.log(tue, fri);
+console.log(openingHours);
+
 const restaurant = {
   name: "Rohim Restora",
   location: "Mirpur 1, Dhaka, Bangladesh",
@@ -7,7 +28,7 @@ const restaurant = {
   starterMenu: ["Dal vat", "roti-porota", "Dal-porota", "ChaiTea", "Pani Vat"],
   mainMenu: ["Chicken Curry", "Biriyani", "Kacchi"],
 
-  order: function (starterIndex, mainIndex) {
+  orderfunction(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -22,34 +43,73 @@ const restaurant = {
     );
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  openingHours,
+
+  //   openingHours: {
+  //     thu: {
+  //       open: 12,
+  //       close: 22,
+  //     },
+  //     fri: {
+  //       open: 11,
+  //       close: 23,
+  //     },
+  //     sat: {
+  //       open: 0, // Open 24 hours
+  //       close: 24,
+  //     },
+  //   },
 
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
-
-  //   orderPizza: function (mainIng, ...optionalIng) {
-  //     console.log(`here is your delicious pizza with ${mainIng} and ${optionalIng}`);
-  //   },
 
   orderPizza: function (mainIng, ...optionalIng) {
     console.log(mainIng);
     console.log(optionalIng);
   },
 };
+
+// console.log(restaurant);
+// ------------------- Enhanced Object Literals ------------------
+
+// ------------------- Looping Arrays: The FOR-OF Loop ---------------
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// // for (let food_menu of menu.entries()) console.log(food_menu);
+
+// // for (let food_menu of menu.entries());
+// // console.log([...menu.entries()]);
+
+// for (let food_menu of menu.entries()) {
+//   console.log(`${food_menu[0] + 1}: ${food_menu[1]}`);
+// }
+
+// for (let food_menu of menu.entries())
+//   console.log(`${food_menu[0] + 1}: ${food_menu[1]}`);
+
+// let fruits = ["apple", "banana", "orange"];
+
+// for (let fruit of fruits) {
+//   console.log(fruit);
+// }
+
+// const player1Single = game.players[0];
+
+// for (let heroTheSuperstar of player1Single) {
+//   console.log(heroTheSuperstar);
+// }
+
+// ============================================
+// const loopTest = [...game.scored];
+// console.log(loopTest);
+
+// for (let toast of loopTest) {
+//   console.log(toast);
+// }
+// ---------- GARBAGE ----------------------
+// ============================================
 
 // ----------------- Coding Challenge 01 ----------------------
 const game = {
