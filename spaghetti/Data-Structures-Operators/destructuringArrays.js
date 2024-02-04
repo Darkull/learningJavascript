@@ -1,25 +1,26 @@
 "use strict";
 
+// example for enhanced object literals
 const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// const openingHours = {
+//   [weekDays[1]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [`day: ${3 + 4}`]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
-const openingHours = {
-  [weekDays[1]]: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  [`day: ${3 + 4}`]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
-
-const { tue, fri, sat } = openingHours;
-console.log(tue, fri);
-console.log(openingHours);
+// const { tue, fri, sat } = openingHours;
+// console.log(tue, fri);
+// console.log(openingHours);
+// -------------- END ---------------
 
 const restaurant = {
   name: "Rohim Restora",
@@ -43,22 +44,25 @@ const restaurant = {
     );
   },
 
-  openingHours,
+  //   openingHours,
 
-  //   openingHours: {
-  //     thu: {
-  //       open: 12,
-  //       close: 22,
-  //     },
-  //     fri: {
-  //       open: 11,
-  //       close: 23,
-  //     },
-  //     sat: {
-  //       open: 0, // Open 24 hours
-  //       close: 24,
-  //     },
-  //   },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+    tue: {
+      close: 10,
+    },
+  },
 
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
@@ -70,8 +74,64 @@ const restaurant = {
   },
 };
 
-// console.log(restaurant);
+// ------------------- Optional Chaining (.) ------------------
+// if (restaurant.openingHours.mon) {
+//   console.log(restaurant.openingHours.mon);
+// } else {
+//   console.log("restaurant doesn't exits");
+// }
+
+// if (restaurant.openingHours && restaurant.openingHours.mon) {
+//   console.log(restaurant.openingHours.mon);
+// }
+
+// // =========== OPTIONAL CHAINING ===============
+// // IF certain property doesn't exist, undefine returned immediately
+
+// console.log(restaurant.openingHour?.mon?.open);
+// // if .mon exists only then .open property will be read. else undefined will be returend
+// a property exists if only it's not null or undefined
+
+// EXAMPLE
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open ?? "CLOSED";
+//   console.log(`on ${day} we open at ${open}`);
+// }
+
+// methods
+console.log(restaurant.orderPizzaa?.(0, 1) ?? "method does not exists");
+
+// arrays
+const user = [
+  {
+    name: "alif",
+    email: "darkulpro@gmail.com",
+  },
+];
+
+// console.log(user[1]?.email ?? "user array is empty");
+
+// alternatively
+if (user.length > 0) console.log(user[0]?.name);
+else console.log("user array empty");
+
+// ======== GARBANGE =======
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open;
+//   const close = restaurant.openingHours[day]?.close;
+//   console.log(close);
+//   if (restaurant.openingHours.open) {
+//     console.log(`on ${day} we open at ${open}`);
+//   } else if (restaurant.openingHours[day]?.close) {
+//     console.log(`on ${day} we close at ${close}`);
+//   }
+// }
+// ======== GARBANGE =======
+
 // ------------------- Enhanced Object Literals ------------------
+// up above
 
 // ------------------- Looping Arrays: The FOR-OF Loop ---------------
 
