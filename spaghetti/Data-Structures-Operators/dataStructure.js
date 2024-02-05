@@ -1,7 +1,7 @@
 "use strict";
 
 // example for enhanced object literals
-const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 // const openingHours = {
 //   [weekDays[1]]: {
 //     open: 12,
