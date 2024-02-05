@@ -74,6 +74,31 @@ const restaurant = {
   },
 };
 
+// ----------- Looping Objects: Object Keys, Values, And Entries -------
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+const properties = Object.keys(restaurant.openingHours);
+console.log(properties);
+
+let openStr = `we are open ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property Values
+const values = Object.values(restaurant.openingHours);
+console.log(values);
+
+const entries = Object.entries(restaurant.openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`on ${key} we open at ${open} and close at ${close}`);
+}
+
 // ------------------- Optional Chaining (.) ------------------
 // if (restaurant.openingHours.mon) {
 //   console.log(restaurant.openingHours.mon);
@@ -101,21 +126,21 @@ const restaurant = {
 // }
 
 // methods
-console.log(restaurant.orderPizzaa?.(0, 1) ?? "method does not exists");
+// console.log(restaurant.orderPizzaa?.(0, 1) ?? "method does not exists");
 
-// arrays
-const user = [
-  {
-    name: "alif",
-    email: "darkulpro@gmail.com",
-  },
-];
+// // arrays
+// const user = [
+//   {
+//     name: "alif",
+//     email: "darkulpro@gmail.com",
+//   },
+// ];
 
-// console.log(user[1]?.email ?? "user array is empty");
+// // console.log(user[1]?.email ?? "user array is empty");
 
-// alternatively
-if (user.length > 0) console.log(user[0]?.name);
-else console.log("user array empty");
+// // alternatively
+// if (user.length > 0) console.log(user[0]?.name);
+// else console.log("user array empty");
 
 // ======== GARBANGE =======
 // for (const day of days) {
