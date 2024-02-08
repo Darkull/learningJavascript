@@ -132,6 +132,7 @@ for (const odd of odds) average += odd;
 console.log(average);
 average /= odds.length;
 console.log(average);
+console.log();
 
 // // 1
 // const player1 = game.players[0];
