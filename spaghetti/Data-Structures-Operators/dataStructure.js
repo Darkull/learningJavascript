@@ -118,28 +118,78 @@ const game = {
 };
 
 // 2.1
-// Loop over the game.scored array and print each player name to the console,
-// along with the goal number (Example: "Goal 1: Lewandowski")
-for (const [index, player] of game.scored.entries())
-  console.log(`Goal ${index + 1}: scored by ${player}`);
+// for (const [goalIndex, playerName] of game.scored.entries())
+//   console.log(`Goal ${goalIndex + 1}: ${playerName}`);
 
-//   2.2
-// Use a loop to calculate the average odd and log it to the console (We already
-// studied how to calculate averages, you can go check if you don't remember)
-let average = 0;
+// 2.2
+// const oddx = game.odds;
+// console.log(oddx);
+// const odd = Object.values(game.odds);
+// console.log(odd);
+
 const odds = Object.values(game.odds);
-for (const odd of odds) average += odd;
-console.log(average);
-average /= odds.length;
-console.log(average);
-console.log();
+
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average);
+
+// 2.3
+// const [team1, draw, team2] = odds; // can be used as array
+// or
+// const { team1, x: draw, team2 } = game.odds;
+// console.log(`Odd of Victory ${game.team1}: ${team1}`);
+// console.log(`Odd of draw ${draw}`);
+// console.log(`Odd of Victory ${game.team2}: ${team2}`);
+
+//how jonas did 2.3
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
+// }
+
+// 2.4
+
+// const scorers = {};
+// for (const player of game.scored) {
+
+// }
+//   // BONUS
+//   // So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
+const scorers = {
+  alif: 1,
+};
+for (const player of game.scored) {
+  console.log(player);
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+
+// // 2.1
+// // Loop over the game.scored array and print each player name to the console,
+// // along with the goal number (Example: "Goal 1: Lewandowski")
+// for (const [index, player] of game.scored.entries())
+//   console.log(`Goal ${index + 1}: scored by ${player}`);
+
+// //   2.2
+// // Use a loop to calculate the average odd and log it to the console (We already
+// // studied how to calculate averages, you can go check if you don't remember)
+// let average = 0;
+// const odds = Object.values(game.odds);
+// for (const odd of odds) average += odd;
+// console.log(average);
+// average /= odds.length;
+// console.log(average);
+// console.log();
+
+// ///////////////////////////// Challenge 1 retried
 
 // // 1
-const player1 = game.players[0];
-const player2 = game.players[1];
-console.log(player2);
+// const player1 = game.players[0];
+// const player2 = game.players[1];
+// console.log(player2);
 
-console.log(`this is darkul, putting a code inside here`);
+// console.log(`this is darkul, putting a code inside here`);
+
 // // 2
 // const [gk] = player1;
 // console.log(gk);
