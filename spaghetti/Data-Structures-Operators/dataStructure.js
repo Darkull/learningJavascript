@@ -135,15 +135,16 @@ console.log(average);
 console.log();
 
 // // 1
-// const player1 = game.players[0];
-// const player2 = game.players[1];
-// console.log(player2);
+const player1 = game.players[0];
+const player2 = game.players[1];
+console.log(player2);
 
+console.log(`this is darkul, putting a code inside here`);
 // // 2
 // const [gk] = player1;
 // console.log(gk);
 // const [, ...fieldPlayers] = player1;
-// console.log(fieldPlayers);
+// console.log(fieldPlayers); // .s
 
 // // 3
 // const allPlayers = [...player1, ...player2];
