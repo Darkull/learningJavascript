@@ -74,48 +74,70 @@ const restaurant = {
   },
 };
 
+//  ---------------------- Data Structure Sets ---------------------
+const orderSet = new Set(["Pasta", "Pizza", "Risotto", "Pizza", "Pasta"]);
+console.log(orderSet);
+
+console.log(new Set("stringIterable")); // string are iterable
+
+console.log(orderSet.size); // it's not length like arrays
+console.log(orderSet.has("Pizza"));
+
+console.log(orderSet.add("Garlic Bread"));
+console.log(orderSet.delete("Pizza"));
+console.log(orderSet);
+// orderSet.clear();
+
+for (const x of orderSet) console.log(x);
+
+// Example
+const staff = ["chef", "manager", "chef", "waiter", "waiter", "chef"];
+const staffUnique = [...new Set(staff)]; // converting set to array
+console.log(staffUnique);
+// converting set to array
+
 //  ---------------------- CODING CHALLENGE #2 ---------------------
 
-const game = {
-  team1: "Bayern Munich",
-  team2: "Borrussia Dortmund",
-  players: [
-    [
-      "Neuer",
-      "Pavard",
-      "Martinez",
-      "Alaba",
-      "Davies",
-      "Kimmich",
-      "Goretzka",
-      "Coman",
-      "Muller",
-      "Gnarby",
-      "Lewandowski",
-    ],
-    [
-      "Burki",
-      "Schulz",
-      "Hummels",
-      "Akanji",
-      "Hakimi",
-      "Weigl",
-      "Witsel",
-      "Hazard",
-      "Brandt",
-      "Sancho",
-      "Gotze",
-    ],
-  ],
-  score: "4:0",
-  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-  date: "Nov 9th, 2037",
-  odds: {
-    team1: 1.33, // more likely to win
-    x: 3.25, // chances to draw
-    team2: 6.5, // to lose
-  },
-};
+// const game = {
+//   team1: "Bayern Munich",
+//   team2: "Borrussia Dortmund",
+//   players: [
+//     [
+//       "Neuer",
+//       "Pavard",
+//       "Martinez",
+//       "Alaba",
+//       "Davies",
+//       "Kimmich",
+//       "Goretzka",
+//       "Coman",
+//       "Muller",
+//       "Gnarby",
+//       "Lewandowski",
+//     ],
+//     [
+//       "Burki",
+//       "Schulz",
+//       "Hummels",
+//       "Akanji",
+//       "Hakimi",
+//       "Weigl",
+//       "Witsel",
+//       "Hazard",
+//       "Brandt",
+//       "Sancho",
+//       "Gotze",
+//     ],
+//   ],
+//   score: "4:0",
+//   scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+//   date: "Nov 9th, 2037",
+//   odds: {
+//     team1: 1.33, // more likely to win
+//     x: 3.25, // chances to draw
+//     team2: 6.5, // to lose
+//   },
+// };
 
 // 2.1
 // for (const [goalIndex, playerName] of game.scored.entries())
@@ -127,7 +149,7 @@ const game = {
 // const odd = Object.values(game.odds);
 // console.log(odd);
 
-const odds = Object.values(game.odds);
+// const odds = Object.values(game.odds);
 
 // let average = 0;
 // for (const odd of odds) average += odd;
@@ -156,13 +178,14 @@ const odds = Object.values(game.odds);
 // }
 //   // BONUS
 //   // So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
-const scorers = {
-  alif: 1,
-};
-for (const player of game.scored) {
-  console.log(player);
-  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
-}
+// const scorers = {
+//   alif: 1,
+// };
+// for (const player of game.scored) {
+//   console.log(player);
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+// problem here, dont understand anything after scorers[player]
 
 // // 2.1
 // // Loop over the game.scored array and print each player name to the console,
