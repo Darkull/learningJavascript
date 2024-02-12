@@ -73,28 +73,73 @@ const restaurant = {
     console.log(optionalIng);
   },
 };
+//  ---------------------- Which data structure to use ---------------------
+
+//  ---------------------- Maps Fundamentals ---------------------
+// const rest = new Map();
+// rest.set("alif hossain", "khabar hotel");
+// console.log(rest.set(1, "Mirpur, Dhaka"));
+// rest.set(2, "London, UK");
+
+// rest
+//   .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+//   .set("open", 11)
+//   .set("close", 23)
+//   .set(true, "We are open")
+//   .set(false, "We are close");
+// console.log(rest);
+
+// // get method
+// // console.log(rest.get(2));
+// // console.log(rest.get(true));
+
+// const time = 11;
+// console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+// console.log(rest.has(1));
+
+// // we can also delete from maps
+// rest.delete(1);
+// console.log(rest.has(1));
+// // rest.clear();
+// console.log(rest.size); // length for maps and sets
+// console.log(rest);
+
+// // rest.set([1, 2], "test");
+// // console.log(rest.get([1, 2]));
+
+// const arry = [1, 2];
+// rest.set(arry, "test");
+// console.log(rest.get(arry));
+
+// // maps also works with dom elements. cuz dom is a special kind of object?
+
+// const objectMaps = new Map();
+
+// objectMaps.set(document.querySelector("h1"), "heading");
+// console.log(objectMaps);
 
 //  ---------------------- Data Structure Sets ---------------------
-const orderSet = new Set(["Pasta", "Pizza", "Risotto", "Pizza", "Pasta"]);
-console.log(orderSet);
+// const orderSet = new Set(["Pasta", "Pizza", "Risotto", "Pizza", "Pasta"]);
+// console.log(orderSet);
 
-console.log(new Set("stringIterable")); // string are iterable
+// console.log(new Set("stringIterable")); // string are iterable
 
-console.log(orderSet.size); // it's not length like arrays
-console.log(orderSet.has("Pizza"));
+// console.log(orderSet.size); // it's not length like arrays
+// console.log(orderSet.has("Pizza"));
 
-console.log(orderSet.add("Garlic Bread"));
-console.log(orderSet.delete("Pizza"));
-console.log(orderSet);
-// orderSet.clear();
+// console.log(orderSet.add("Garlic Bread"));
+// console.log(orderSet.delete("Pizza"));
+// console.log(orderSet);
+// // orderSet.clear();
 
-for (const x of orderSet) console.log(x);
+// for (const x of orderSet) console.log(x);
 
-// Example
-const staff = ["chef", "manager", "chef", "waiter", "waiter", "chef"];
-const staffUnique = [...new Set(staff)]; // converting set to array
-console.log(staffUnique);
-// converting set to array
+// // Example
+// const staff = ["chef", "manager", "chef", "waiter", "waiter", "chef"];
+// const staffUnique = [...new Set(staff)]; // converting set to array
+// console.log(staffUnique);
+// // converting set to array
 
 //  ---------------------- CODING CHALLENGE #2 ---------------------
 
