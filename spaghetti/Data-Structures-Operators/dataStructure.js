@@ -79,6 +79,30 @@ const restaurant = {
 //  ---------------------- Coding Challenge #4 ---------------------
 
 //  ---------------------- Working with string #3 ---------------------
+// console.log("alif+is+a+very+nice+guy".split("+"));
+// console.log("Alif Hossain".split(" "));
+
+// const [firstName, lastName] = "Tareq Mahmud".split(" ");
+// console.log(lastName, firstName);
+// console.log("alif hossain".slice(0, 4));
+
+// const newName = ["Mr.", firstName, lastName.toUpperCase()].join("-");
+// console.log(newName);
+
+// name capitalizor
+const capitalizeName = function (name) {
+  const names = name.split(" ");
+
+  const nameUpper = [];
+  for (const x of names) {
+    // nameUpper.push(x[0].toUpperCase() + x.slice(1));
+    nameUpper.push(x.replace(x[0], x[0].toUpperCase()));
+  }
+  console.log(nameUpper.join(" "));
+};
+
+capitalizeName("alif hossain");
+capitalizeName("mohammad bin kashem");
 
 //  ---------------------- Working with string #2 ---------------------
 // const airline = "Darku Air Bangladesh";
@@ -108,57 +132,57 @@ const restaurant = {
 // passengerName("aLif HoSsain");
 
 // comparing user input email
-const email = "alifhossainbits@gmail.com";
-const loginEmail = "   AlifHossainBits@GMAIL.CoM  \n";
+// const email = "alifhossainbits@gmail.com";
+// const loginEmail = "   AlifHossainBits@GMAIL.CoM  \n";
 
-// const lowerEmail = loginEmail.toLowerCase();
-// const trimmeredEmail = lowerEmail.trim();
-// console.log(trimmeredEmail);
+// // const lowerEmail = loginEmail.toLowerCase();
+// // const trimmeredEmail = lowerEmail.trim();
+// // console.log(trimmeredEmail);
 
-// in one go
-const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
+// // in one go
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
 
-// compare mail and normal..
-console.log(email === normalizedEmail);
+// // compare mail and normal..
+// console.log(email === normalizedEmail);
 
-const checkMail = function (mail) {
-  const originalMail = mail;
-  const normalizedMail = originalMail.toLowerCase().trim();
-  console.log(normalizedMail);
-};
-checkMail("  Alifhossain5577@gmail.com  \n");
+// const checkMail = function (mail) {
+//   const originalMail = mail;
+//   const normalizedMail = originalMail.toLowerCase().trim();
+//   console.log(normalizedMail);
+// };
+// checkMail("  Alifhossain5577@gmail.com  \n");
 
-// replace parts of strings
-const priceEU = "290,00£";
-const priceUS = priceEU.replace("£", "$").replace(",", ".");
-console.log(priceUS, priceEU);
+// // replace parts of strings
+// const priceEU = "290,00£";
+// const priceUS = priceEU.replace("£", "$").replace(",", ".");
+// console.log(priceUS, priceEU);
 
-const announcement =
-  "All passengers please come to boarding door 23. Boarding door 23!";
-const fixedAnnouncement = announcement.replaceAll("door", "gate");
-console.log(fixedAnnouncement);
+// const announcement =
+//   "All passengers please come to boarding door 23. Boarding door 23!";
+// const fixedAnnouncement = announcement.replaceAll("door", "gate");
+// console.log(fixedAnnouncement);
 
-// booleans
-const plane = "Airbus A320neo";
-console.log(plane.includes("A320")); // case sensitive
-console.log(plane.startsWith("neo"));
-console.log(plane.endsWith("neo"));
+// // booleans
+// const plane = "Airbus A320neo";
+// console.log(plane.includes("A320")); // case sensitive
+// console.log(plane.startsWith("neo"));
+// console.log(plane.endsWith("neo"));
 
-if (plane.startsWith("Airbus") && plane.endsWith("neo"))
-  console.log("part of the new airbus family!");
+// if (plane.startsWith("Airbus") && plane.endsWith("neo"))
+//   console.log("part of the new airbus family!");
 
-// practise
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes("knife") || baggage.includes("gun")) {
-    console.log("prohibited item!");
-  } else {
-    console.log("Entry Granted!");
-  }
-};
+// // practise
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes("knife") || baggage.includes("gun")) {
+//     console.log("prohibited item!");
+//   } else {
+//     console.log("Entry Granted!");
+//   }
+// };
 
-checkBaggage("I have a laptop");
+// checkBaggage("I have a laptop");
 
 // const checkMail = function (mail) {
 //   const normalizedMail = mail.toLowerCase().trim();
