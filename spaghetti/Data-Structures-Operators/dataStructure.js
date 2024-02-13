@@ -73,6 +73,179 @@ const restaurant = {
     console.log(optionalIng);
   },
 };
+
+//  ---------------------- String methods practice ---------------------
+
+//  ---------------------- Coding Challenge #4 ---------------------
+
+//  ---------------------- Working with string #3 ---------------------
+
+//  ---------------------- Working with string #2 ---------------------
+const airline = "Darku Air Bangladesh";
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = "aLIf HoSSaiN"; // Alif Hossain
+const passengerLower = passenger.toLocaleLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() +
+  passengerLower.slice(1, 5) +
+  passengerLower[5].toUpperCase() +
+  passengerLower.slice(6);
+
+console.log(passengerCorrect);
+
+// function
+const passengerName = function (name) {
+  const passenger = `${name}`;
+  const passengerLower = passenger.toLocaleLowerCase();
+  const passengerCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+  console.log(passengerCorrect);
+};
+
+passengerName("aLif HoSsain");
+
+// comparing user input email
+const email = "alifhossainbits@gmail.com";
+
+const loginEmail = "   AlifHossainBits@GMAIL.CoM  \n";
+const lowerEmail = loginEmail.toLowerCase();
+const trimmeredEmail = lowerEmail.trim();
+console.log(trimmeredEmail);
+
+// in one go
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// compare mail and normal..
+console.log(email === normalizedEmail);
+
+const checkMail =
+
+//  ---------------------- Working with string #1 ---------------------
+// const airline = "Darku Air Bangladesh";
+// const plane = "A320";
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log(plane.length);
+// console.log(airline.length);
+// console.log("HelloWorld".length);
+
+// console.log(airline.indexOf("ad"));
+// console.log(airline.lastIndexOf("ad"));
+
+// // extract part of string using slice method
+// console.log(airline.slice(0, 5)); // its a sub string, doesnt change main string
+// // it's impossible to mutate strings because they are primitives
+
+// // without hard coding
+// console.log(airline.slice(airline.lastIndexOf("u"), airline.indexOf("D")));
+// console.log(airline.slice(0, airline.indexOf(" ")));
+// console.log(airline.slice(airline.lastIndexOf(" ") + 1));
+// console.log(airline.slice(-4));
+// console.log(airline.slice(0));
+// console.log(airline.slice(1, 0));
+
+// write a function, that recieves an airplane seat and logs to the console wheather it's middle seat or not
+
+// const middleSeatCheck = function (seatNum) {
+//   const middleSeats = new Set(["C1", "C2", "D1", "D2"]);
+//   //   if (middleSeats.has(`${seatNum}`)) {
+//   //     console.log(`${seatNum} is a Middle Seat`);
+//   //   } else {
+//   //     console.log(`${seatNum} is not a Middle Seat`);
+//   //   }
+
+//   // using ternary operator
+//   middleSeats.has(`${seatNum}`)
+//     ? console.log(`${seatNum} is a Middle Seat`)
+//     : console.log(`${seatNum} is not a Middle Seat`);
+// };
+
+// middleSeatCheck("C1");
+
+// jonas solution ( my version )
+// const middleSeatCheck = function (seatNum) {
+//   // C and D are Middle Seats
+//   const CD =
+//     seatNum.slice(seatNum.lastIndexOf(-1)) === "D" ||
+//     seatNum.slice(seatNum.lastIndexOf(-1)) === "C";
+
+//   CD
+//     ? console.log(`${seatNum} is a Middle Seat`)
+//     : console.log(`${seatNum} is not a Middle Seat`);
+// };
+
+// middleSeatCheck("22C");
+// middleSeatCheck("45A");
+
+// Jonas Solution
+
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+//   if (s === "C" || s === "D") console.log(`${seat} is a Middle Seat`);
+//   else console.log(`${seat} is not a Middle Seat`);
+// };
+
+// checkMiddleSeat("3D");
+
+// why string method works?
+// console.log(typeof new String("AlifHossain").slice(1));
+// object
+
+//  ---------------------- Coding Challenge #3 ---------------------
+
+const gameEvents = new Map([
+  [17, "⚽ GOAL"],
+  [36, "� Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "� Substitution"],
+  [64, "� Yellow card"],
+  [69, "� Red card"],
+  [70, "� Substitution"],
+  [72, "� Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "� Yellow card"],
+]);
+
+// 1
+// for (const x of gameEvents.values()) console.log(x);
+
+// console.log(gameEvents.values());
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// // 2
+// gameEvents.delete(64);
+// console.log(gameEvents.has(64));
+
+// 3
+// const time = [...gameEvents.keys()].pop();
+// console.log(
+//   `An event happened, on average, every ${Math.round(
+//     time / gameEvents.size
+//   )} minutes `
+// );
+
+// // 4
+
+// for (const [minute, event] of gameEvents.entries()) {
+//   const firstHalf = minute <= 45 ? "First half" : "Second half";
+//   console.log(`${firstHalf} ${minute} : ${event}`);
+// }
+
+// for (const [minute, event] of gameEvents) {
+//   const half = minute <= 45 ? "FIRST HALF" : "SECOND HALF";
+//   console.log(`[${half}] ${minute}: ${event}`);
+// }
+
+// 4
+
 //  ---------------------- Which data structure to use ---------------------
 
 //  ---------------------- Maps Fundamentals ---------------------
