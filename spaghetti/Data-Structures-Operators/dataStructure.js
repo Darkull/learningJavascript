@@ -83,21 +83,42 @@ const flights =
 //   🔴 Delayed Arrival from HEL to FAO (12h05)
 //            Departure from FAO to LIS (12h30)
 
+// console.log(flights.toLocaleLowerCase().trim().split(";"));
+// const separatePlus = flights.toLocaleLowerCase().trim().split("+");
+// console.log(separatePlus);
+// const separatePlusX = 0;
+
+const getCode = (str) => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split("+")) {
+  const flightSplit = flight.split(";");
+  const [x, a, b, y] = flightSplit.values();
+
+  const output = `${x.startsWith("_Delayed") ? "⚠️" : ""}${x.replaceAll(
+    "_",
+    " "
+  )} from ${getCode(a)} to ${getCode(b)} ${y.replace(":", "h")}`.padStart(
+    50,
+    " "
+  );
+  console.log(output);
+}
+
 //  ---------------------- Coding Challenge #4 ---------------------
-document.body.append(document.createElement("textarea"));
-document.body.append(document.createElement("button"));
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
 
-document.querySelector("button").addEventListener("click", function () {
-  const text = document.querySelector("textarea").value;
-  const rows = text.split("\n");
+// document.querySelector("button").addEventListener("click", function () {
+//   const text = document.querySelector("textarea").value;
+//   const rows = text.split("\n");
 
-  for (const [i, row] of rows.entries()) {
-    const [first, second] = row.toLocaleLowerCase().trim().split("_");
-    const secondCamelCase = second.replace(second[0], second[0].toUpperCase());
-    const output = first + secondCamelCase;
-    console.log(`${output.padEnd(20, " ")} ${"✅".repeat(i + 1)}`);
-  }
-});
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLocaleLowerCase().trim().split("_");
+//     const secondCamelCase = second.replace(second[0], second[0].toUpperCase());
+//     const output = first + secondCamelCase;
+//     console.log(`${output.padEnd(20, " ")} ${"✅".repeat(i + 1)}`);
+//   }
+// });
 
 //  ---------------------- Working with string #3 ---------------------
 // console.log("alif+is+a+very+nice+guy".split("+"));
