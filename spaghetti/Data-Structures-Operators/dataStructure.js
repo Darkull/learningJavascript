@@ -77,6 +77,22 @@ const restaurant = {
 //  ---------------------- String methods practice ---------------------
 
 //  ---------------------- Coding Challenge #4 ---------------------
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const rows = text.split("\n");
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLocaleLowerCase().trim().split("_");
+    const secondCamelCase = second.replace(second[0], second[0].toUpperCase());
+    const output = first + secondCamelCase;
+    console.log(`${output.padEnd(20, " ")} ${"✅".repeat(i + 1)}`);
+  }
+});
+
+const str = "The quick brown fox jumps over the lazy dog.";
 
 //  ---------------------- Working with string #3 ---------------------
 // console.log("alif+is+a+very+nice+guy".split("+"));
@@ -112,23 +128,24 @@ const restaurant = {
 // console.log(message.padStart(25, "=").padEnd(30, "0"));
 
 // credit card number
-const maskCreditCard = function (number) {
-  const str = String(number);
-  const last = str.slice(-4);
-  console.log(last.padStart(str.length, "*"));
-};
+// const maskCreditCard = function (number) {
+//   const str = String(number);
+//   const last = str.slice(-4);
+//   console.log(last.padStart(str.length, "*"));
+// };
 
-maskCreditCard("555615635613561554561");
+// maskCreditCard("555615635613561554561");
 
-// Repeat
-const message2 = "Bad weather... All Departues Delayed... ";
-console.log(message2.repeat(5));
+// // Repeat
+// const message2 = "Bad weather... All Departues Delayed... ";
+// console.log(message2.repeat(5));
 
-const planesInLine = function (n) {
-  console.log(`There are ${n} number of planes in line ${"✈️".repeat(n)}`);
-};
-planesInLine(5);
-planesInLine(3);
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} number of planes in line ${"✈️".repeat(n)}`);
+// };
+// planesInLine(5);
+// planesInLine(3);
+
 //  ---------------------- Working with string #2 ---------------------
 // const airline = "Darku Air Bangladesh";
 // console.log(airline.toLowerCase());
