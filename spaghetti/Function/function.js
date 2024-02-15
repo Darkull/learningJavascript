@@ -1,4 +1,37 @@
 "use strict";
+// ---------- The Call and Apply Method ----------------
+const biman = {
+  airline: "Biman Bangladesh Airlines",
+  iataCode: "BM",
+  bookings: [],
+  //   book: function() {}   old way of writing
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+    console.log(this.bookings);
+  },
+};
+
+biman.book(737, "Alif Hossain");
+biman.book(349, "Asif Hossain");
+
+const novoAir = {
+  airline: "NovoAir",
+  iataCode: "NA",
+  bookings: [],
+};
+
+// const book = biman.book;
+// book(23, "alif");  // this will return undefined. because this.something is not defined here.
+// it's just a regular function call
+
+const book = biman.book;
+book.call(novoAir, 234, "Darkul");
+// a function is really just an object.. objects have methods and function can have methods too
+
+book.call(biman, 345, "Rajib Hasan Shawon");
 
 // -------- Functions Returning Functions  ---------
 // create a function that returns a new function
@@ -8,6 +41,20 @@
 //   };
 // };
 
+const USBangla = {
+  airline: "US Bangla Airlines",
+  iataCode: "USB",
+  bookings: [],
+};
+
+book.call(USBangla, 888, "Mr. Sakib");
+
+// Apply Method
+const flightData = [900, "Islam Nomin"];
+book.apply(novoAir, flightData);
+// but we can use call and spread operator. so it's not used anymore
+book.call(novoAir, ...flightData);
+
 // const greeterHey = greet("Hey"); // greeterHey is the value of greet. so it's also a function. and we can use it outside.
 
 // greeterHey("Alif"); // output: Hey, Alif
@@ -16,9 +63,9 @@
 // // we call greet function, after calling we have another returned function inside of it. so we can call it again.
 
 // rewriting using only arrow function
-const greet = (greet) => (name) => console.log(`${greet}, ${name}`);
+// const greet = (greet) => (name) => console.log(`${greet}, ${name}`);
 
-greet("hi")("alif");
+// greet("hi")("alif");
 
 // --- Functions accepting callback functions  ---
 // oneWord replaces all the spaces in a word
