@@ -1,5 +1,6 @@
 "use strict";
-// ---------- The Call and Apply Method ----------------
+
+// ---------- The Bind Method --------------
 const biman = {
   airline: "Biman Bangladesh Airlines",
   iataCode: "BM",
@@ -14,24 +15,84 @@ const biman = {
   },
 };
 
-biman.book(737, "Alif Hossain");
-biman.book(349, "Asif Hossain");
-
 const novoAir = {
   airline: "NovoAir",
   iataCode: "NA",
   bookings: [],
 };
 
+const USBangla = {
+  airline: "US Bangla Airlines",
+  iataCode: "USB",
+  bookings: [],
+};
+
+// const book = biman.book;
+// book.call(biman, 734, "Alif Hossain");
+// book.call(novoAir, 834, "Mim Akhter");
+
+const bookNA = biman.book.bind(novoAir);
+const bookUSB = biman.book.bind(USBangla);
+const bookBM = biman.book.bind(biman);
+
+bookNA(938, "Shamim Shorkar");
+bookUSB(234, "Arif Azad");
+bookBM(234, "Alif Hossain");
+
+// we can s
+const bookNA717 = biman.book.bind(novoAir, 717);
+bookNA717("Mr. Kashem");
+
+// ---------- The Call and Apply Method ----------------
+// const biman = {
+//   airline: "Biman Bangladesh Airlines",
+//   iataCode: "BM",
+//   bookings: [],
+//   //   book: function() {}   old way of writing
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+//     );
+//     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+//     console.log(this.bookings);
+//   },
+// };
+
+// biman.book(737, "Alif Hossain");
+// biman.book(349, "Asif Hossain");
+
+// const novoAir = {
+//   airline: "NovoAir",
+//   iataCode: "NA",
+//   bookings: [],
+// };
+
 // const book = biman.book;
 // book(23, "alif");  // this will return undefined. because this.something is not defined here.
 // it's just a regular function call
 
-const book = biman.book;
-book.call(novoAir, 234, "Darkul");
-// a function is really just an object.. objects have methods and function can have methods too
+// const book = biman.book;
+// // books(456, "Namid");  // broprob:
+// biman.book(3434, "sattar");
 
-book.call(biman, 345, "Rajib Hasan Shawon");
+// book.call(novoAir, 234, "Darkul");
+// // a function is really just an object.. objects have methods and function can have methods too
+
+// book.call(biman, 345, "Rajib Hasan Shawon");
+
+// const USBangla = {
+//   airline: "US Bangla Airlines",
+//   iataCode: "USB",
+//   bookings: [],
+// };
+
+// book.call(USBangla, 888, "Mr. Sakib");
+
+// // Apply Method
+// const flightData = [900, "Islam Nomin"];
+// book.apply(novoAir, flightData);
+// // but we can use call and spread operator. so it's not used anymore
+// book.call(novoAir, ...flightData);
 
 // -------- Functions Returning Functions  ---------
 // create a function that returns a new function
@@ -40,20 +101,6 @@ book.call(biman, 345, "Rajib Hasan Shawon");
 //     console.log(`${greeting}, ${name}`);
 //   };
 // };
-
-const USBangla = {
-  airline: "US Bangla Airlines",
-  iataCode: "USB",
-  bookings: [],
-};
-
-book.call(USBangla, 888, "Mr. Sakib");
-
-// Apply Method
-const flightData = [900, "Islam Nomin"];
-book.apply(novoAir, flightData);
-// but we can use call and spread operator. so it's not used anymore
-book.call(novoAir, ...flightData);
 
 // const greeterHey = greet("Hey"); // greeterHey is the value of greet. so it's also a function. and we can use it outside.
 
