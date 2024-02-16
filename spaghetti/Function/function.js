@@ -1,80 +1,183 @@
 "use strict";
+// ---------- Coding Challenge #1 ---------------------
+const poll = {
+  question: "What is your favourite programming language?",
+  options: ["0: JavaScript", "1: Python", "2: Rust", "3:C++"],
+  // This generates [0, 0, 0, 0]. More in the next section!
+  answers: new Array(4).fill(0),
+};
 
 // ---------- The Bind Method --------------
-const biman = {
-  airline: "Biman Bangladesh Airlines",
-  iataCode: "BM",
-  bookings: [],
-  //   book: function() {}   old way of writing
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-    );
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-    console.log(this.bookings);
-  },
-};
+// const biman = {
+//   airline: "Biman Bangladesh Airlines",
+//   iataCode: "BM",
+//   bookings: [],
+//   //   book: function() {}   old way of writing
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+//     );
+//     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+//     console.log(this.bookings);
+//   },
+// };
 
-const novoAir = {
-  airline: "NovoAir",
-  iataCode: "NA",
-  bookings: [],
-};
+// const novoAir = {
+//   airline: "NovoAir",
+//   iataCode: "NA",
+//   bookings: [],
+// };
 
-const USBangla = {
-  airline: "US Bangla Airlines",
-  iataCode: "USB",
-  bookings: [],
-};
+// const USBangla = {
+//   airline: "US Bangla Airlines",
+//   iataCode: "USB",
+//   bookings: [],
+// };
 
-// const book = biman.book;
-// book.call(biman, 734, "Alif Hossain");
-// book.call(novoAir, 834, "Mim Akhter");
+// // const book = biman.book;
+// // book.call(biman, 734, "Alif Hossain");
+// // book.call(novoAir, 834, "Mim Akhter");
 
-const bookNA = biman.book.bind(novoAir);
-const bookUSB = biman.book.bind(USBangla);
-const bookBM = biman.book.bind(biman);
+// const bookNA = biman.book.bind(novoAir);
+// const bookUSB = biman.book.bind(USBangla);
+// const bookBM = biman.book.bind(biman);
 
-bookNA(938, "Shamim Shorkar");
-bookUSB(234, "Arif Azad");
-bookBM(234, "Alif Hossain");
+// bookNA(938, "Shamim Shorkar");
+// bookUSB(234, "Arif Azad");
+// bookBM(234, "Alif Hossain");
 
-// we can just one argument.. the other may be defined
-const bookNA717 = biman.book.bind(novoAir, 717);
-bookNA717("Mr. Kashem");
+// // we can just one argument.. the other may be defined
+// const bookNA717 = biman.book.bind(novoAir, 717);
+// bookNA717("Mr. Kashem");
 
-// with event listeners
-biman.planes = 300;
-biman.buyPlane = function () {
-  //   console.log(this);
+// // with event listeners
+// biman.planes = 300;
+// biman.buyPlane = function () {
+//   //   console.log(this);
 
-  this.planes++;
-  console.log(this.planes);
-};
+//   this.planes++;
+//   console.log(this.planes);
+// };
 
-// biman.buyPlane(); // here this keyword is biman
+// // biman.buyPlane(); // here this keyword is biman
 
-// document.querySelector(".buy").addEventListener("click", biman.buyPlane);
-// for this to point to biman object we can use the bind method
-document
-  .querySelector(".buy")
-  .addEventListener("click", biman.buyPlane.bind(biman));
+// // document.querySelector(".buy").addEventListener("click", biman.buyPlane);
+// // for this to point to biman object we can use the bind method
+// document
+//   .querySelector(".buy")
+//   .addEventListener("click", biman.buyPlane.bind(biman));
 
-// partial application
-const addTax = (rate, value) => value + value * rate;
-console.log(addTax(0.1, 100));
+// // partial application
+// // const addTax = (rate, value) => value + value * rate;
+// // console.log(addTax(0.1, 100));
 
-const addVAT = addTax.bind(null, 0.23);
-// addVAT = value => value + value * 23;
-console.log(addVAT(100));
+// // const addVAT = addTax.bind(null, 0.23);
+// // // addVAT = value => value + value * 23;
+// // console.log(addVAT(100));
 
-const calculateTaxValue = (rate, value) => value * rate;
-console.log(calculateTaxValue(0.2, 100));
+// // const calculateTaxValue = (rate, value) => value * rate;
+// // console.log(calculateTaxValue(0.2, 100));
 
-const calculateVATValue = calculateTaxValue.bind(null, 0.5);
-console.log(calculateVATValue(500)); // should return 500
+// // const calculateVATValue = calculateTaxValue.bind(null, 0.5);
+// // console.log(calculateVATValue(500)); // should return 500
+
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     console.log(rate * value);
+//   };
+// };
+
+// addTaxRate(0.1)(200);
+// // challenge complete
 
 // -------------------- Side Challenges  -----------------------
+const dolphinsScores = [96, 108, 89];
+const koalasScores = [88, 91, 110];
+
+// Calculate average scores
+const calculateAvg = function (value1, value2, value3) {
+  const average = (value1 + value2 + value3) / 3;
+  console.log(average);
+}; // you have created the function 10/10
+
+// but we have to declare the function, and store the average values in a variable.
+
+calculateAvg(96, 108, 89); // this is wrong, it's neither a function or a variable.
+// to declare a variable you must use const, var or let
+// to call a function you must use callback () parenthesis
+// now this is a function callback. we are calling this function in other words executing them.
+// now we must put the values inside of the parenthesis
+//    calculateAvg = [88, 91, 110];
+
+// let winner;
+// if (dolphinsAvgScore > koalasAvgScore) {
+//   winner = 'Dolphins';
+// } else (koalasAvgScore > dolphinsAvgScore) {
+//   winner = 'Koalas';
+// }
+
+// console.log("The winner of the competition is:", winner);
+
+// // challenge 3
+// //Dolphins score 96, 108 and 89.
+// // Calculate the average score for each team
+// // are you watching?
+// // we are going to calculate the average for dolphins
+
+// // doing it in a variable.
+// const dolphinAverage = (96 + 108 + 89) / 3; // formula to calculate average
+// console.log(dolphinAverage); // output: 97.66666666666667
+
+// // doing it in a function
+// // first, we declared the function, used 3 parameters value1-value3.. it can recieve only three values..
+// const calculateAvg = function (value1, value2, value3) {
+//   const average = (value1 + value2 + value3) / 3;
+//   console.log(average);
+// };
+
+// calculateAvg(96, 108, 89); //
+// // output is: 97.66666666666667
+// // are you watching?
+// // this was calculated for team dolphins, we can calculate for team koala instead of writing a long ass code like this > const dolphinAverage = (96 + 108 + 89) / 3;
+// calculateAvg(88, 91, 110);
+// // output: 96.33333333333333
+// // Koalas score 88, 91 and 110
+
+// // Compare the team's average scores to determine the winner of the competition,
+// // from our past code 1 challenge, it's the same as that.
+// // use if else statement to do it.
+
+// // and print it to the console. Don't forget that there can be a draw, so test for that
+// // same thing, but leave draw for later.. first just do simple comparsion and see who wins.. we will work on draw later!
+// // good luck >:)
+// // as well (draw means they have the same average score)
+
+// // watching this carefully. gonna teach you how function works.
+// // lets create a very simple function, which recieved a name and prints it to the console.
+// // first we decalre a variable, then we store the function values inside of it.
+
+// const functionToPrintName = function (firstName, lastName) {
+//   console.log(`your first name is ${firstName} and lastname is ${lastName}`); // do you understand what I did?
+// }; // then we declare the function. Inside of the parenthesis we put parameters for the function. to explain a parameter, it's kind of placeholder.. u will understand soon! inside of the curly braces, we do our thing, telling function what to do basically.
+// // let's print the names. we use backtick inside of console.log(``)
+// // to print variables, or do mathematical operations..
+// // now we can call this function as much time as we want, using different peoples names.
+
+// functionToPrintName("Alif", "Hossain");
+// functionToPrintName("Rajib", "Shawon");
+// remember the parameters in the function? that can take two values..
+// now while we call the function we can pass on two arguments.. here  'Alif', 'Hossain' and 'Rajib', 'Shawon'
+// I am gonna execute them now
+
+// output:
+// your first name is Alif and lastname is Hossain
+// your first name is Rajib and lastname is Shawon
+// do you understand?
+// we can do more with the function.. for example in the challenge,
+// it's asking to calculate the average for each time.. if we use variables then it will take us forever! but with function we can just create one and call as many time as needed.. for as many team as they want.
+
+// for team 2
+
 // // bmi calculator #1
 
 // const markHeight = 1.69;
