@@ -39,9 +39,78 @@ bookNA(938, "Shamim Shorkar");
 bookUSB(234, "Arif Azad");
 bookBM(234, "Alif Hossain");
 
-// we can s
+// we can just one argument.. the other may be defined
 const bookNA717 = biman.book.bind(novoAir, 717);
 bookNA717("Mr. Kashem");
+
+// with event listeners
+biman.planes = 300;
+biman.buyPlane = function () {
+  //   console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+// biman.buyPlane(); // here this keyword is biman
+
+// document.querySelector(".buy").addEventListener("click", biman.buyPlane);
+// for this to point to biman object we can use the bind method
+document
+  .querySelector(".buy")
+  .addEventListener("click", biman.buyPlane.bind(biman));
+
+// partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 100));
+
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value + value * 23;
+console.log(addVAT(100));
+
+const calculateTaxValue = (rate, value) => value * rate;
+console.log(calculateTaxValue(0.2, 100));
+
+const calculateVATValue = calculateTaxValue.bind(null, 0.5);
+console.log(calculateVATValue(500)); // should return 500
+
+// -------------------- Side Challenges  -----------------------
+// // bmi calculator #1
+
+// const markHeight = 1.69;
+// const markWeight = 78;
+
+// const johnHeight = 1.95;
+// const johnWeight = 92;
+
+// const marksBmi = markWeight / (markHeight * markHeight);
+// console.log(marksBmi); // output: 27
+
+// const johnBmi = johnWeight / (johnHeight * johnHeight);
+// console.log(johnBmi); // output: 24
+
+// // clearly mark has higher bmi
+// // now we can use boolean values to see if john or mark has higher bmi.
+// // boolean values are either true or false.
+// // we can use conditional operator or if else statement to check if john or mark has higher bmi
+// // do you know about boolean values? what about if else statement?
+// // alright check this
+
+// // let me tell you this,
+// if (marksBmi > johnBmi) {
+//   console.log(`mark has higher bmi of ${marksBmi}`); // right, this one will be executed. because marksBmi is higher, and our condition is if marksBmi is higher then execute this
+// } else {
+//   // else execute this... let's see!!
+//   console.log(`john has higher bmi of ${johnBmi}`); // this ?
+// }
+
+// // this is the output: mark has higher bmi of 27.309968138370508
+// // do you understand now? I will give you the code
+
+// // do you understand what I did here?
+// // when my mic gets fixed I can.. explain better.. it can be after 5/6 hours :p
+// // tell me what the result will be? which one of those two is going to be executed?
+// //
 
 // ---------- The Call and Apply Method ----------------
 // const biman = {
