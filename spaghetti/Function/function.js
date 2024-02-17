@@ -5,7 +5,47 @@ const poll = {
   options: ["0: JavaScript", "1: Python", "2: Rust", "3:C++"],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
+  registerNewAnswer: function () {
+    const answerStore = Number(
+      prompt(`${this.question} \n ${this.options.join("\n")}`)
+    );
+
+    if (answerStore <= 3 && answerStore === 0) {
+      this.answers[0]++;
+    } else if (answerStore === 1) {
+      this.answers[1]++;
+    } else if (answerStore === 2) {
+      this.answers[2]++;
+    } else if (answerStore === 3) {
+      this.answers[3]++;
+    } else {
+      console.log("Enter a number between 0 and 3");
+    }
+    // update answer property,
+    // if 3, then add 1 at position 3 of array,
+    // check if input is number and it's between 0 and 3
+    this.displayResults();
+    this.displayResults("string");
+  },
+  displayResults(type = "array") {
+    if (type === "array") {
+      console.log(this.answers);
+    } else if (type === "string") {
+      console.log(`Poll results are ${this.answers.join(", ")}`);
+    }
+  },
 };
+document
+  .querySelector(".poll")
+  .addEventListener("click", poll.registerNewAnswer.bind(poll)); // question, why () without calling returned undefined!
+// addeventlistener like functions will always point to the element that it;s attached to.. to fix this, we can use .bind(poll)
+
+// test data
+// § Data 1: [5, 2, 3]
+// § Data 2: [1, 5, 3, 9, 6, 1]
+
+poll.displayResults.call({ answers: [3, 4, 5] }, "string");
+poll.displayResults.call({ answers: [3, 4, 5] });
 
 // ---------- The Bind Method --------------
 // const biman = {
@@ -91,22 +131,27 @@ const poll = {
 // // challenge complete
 
 // -------------------- Side Challenges  -----------------------
-const dolphinsScores = [96, 108, 89];
-const koalasScores = [88, 91, 110];
+// const dolphinsScores = [96, 108, 89];
+// const koalasScores = [88, 91, 110];
 
-// Calculate average scores
-const calculateAvg = function (value1, value2, value3) {
-  const average = (value1 + value2 + value3) / 3;
-  console.log(average);
-}; // you have created the function 10/10
+// // Calculate average scores
+// const calculateAvg = function (value1, value2, value3) {
+//   const average = (value1 + value2 + value3) / 3;
+//   console.log(average);
+// }; // you have created the function 10/10
 
-// but we have to declare the function, and store the average values in a variable.
+// // but we have to declare the function, and store the average values in a variable.
 
-calculateAvg(96, 108, 89); // this is wrong, it's neither a function or a variable.
+// calculateAvg(96, 108, 89); // this is wrong, it's neither a function or a variable.
 // to declare a variable you must use const, var or let
 // to call a function you must use callback () parenthesis
 // now this is a function callback. we are calling this function in other words executing them.
 // now we must put the values inside of the parenthesis
+// now we got the output: 97.66666666666667 by calling this function
+// now u try to call the function, i will be watching ur screen
+
+// are you watching?
+
 //    calculateAvg = [88, 91, 110];
 
 // let winner;
