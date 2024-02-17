@@ -1,51 +1,51 @@
 "use strict";
 // ---------- Coding Challenge #1 ---------------------
-const poll = {
-  question: "What is your favourite programming language?",
-  options: ["0: JavaScript", "1: Python", "2: Rust", "3:C++"],
-  // This generates [0, 0, 0, 0]. More in the next section!
-  answers: new Array(4).fill(0),
-  registerNewAnswer: function () {
-    const answerStore = Number(
-      prompt(`${this.question} \n ${this.options.join("\n")}`)
-    );
+// const poll = {
+//   question: "What is your favourite programming language?",
+//   options: ["0: JavaScript", "1: Python", "2: Rust", "3:C++"],
+//   // This generates [0, 0, 0, 0]. More in the next section!
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer: function () {
+//     const answerStore = Number(
+//       prompt(`${this.question} \n ${this.options.join("\n")}`)
+//     );
 
-    if (answerStore <= 3 && answerStore === 0) {
-      this.answers[0]++;
-    } else if (answerStore === 1) {
-      this.answers[1]++;
-    } else if (answerStore === 2) {
-      this.answers[2]++;
-    } else if (answerStore === 3) {
-      this.answers[3]++;
-    } else {
-      console.log("Enter a number between 0 and 3");
-    }
-    // update answer property,
-    // if 3, then add 1 at position 3 of array,
-    // check if input is number and it's between 0 and 3
-    this.displayResults();
-    this.displayResults("string");
-  },
-  displayResults(type = "array") {
-    if (type === "array") {
-      console.log(this.answers);
-    } else if (type === "string") {
-      console.log(`Poll results are ${this.answers.join(", ")}`);
-    }
-  },
-};
-document
-  .querySelector(".poll")
-  .addEventListener("click", poll.registerNewAnswer.bind(poll)); // question, why () without calling returned undefined!
-// addeventlistener like functions will always point to the element that it;s attached to.. to fix this, we can use .bind(poll)
+//     if (answerStore <= 3 && answerStore === 0) {
+//       this.answers[0]++;
+//     } else if (answerStore === 1) {
+//       this.answers[1]++;
+//     } else if (answerStore === 2) {
+//       this.answers[2]++;
+//     } else if (answerStore === 3) {
+//       this.answers[3]++;
+//     } else {
+//       console.log("Enter a number between 0 and 3");
+//     }
+//     // update answer property,
+//     // if 3, then add 1 at position 3 of array,
+//     // check if input is number and it's between 0 and 3
+//     this.displayResults();
+//     this.displayResults("string");
+//   },
+//   displayResults(type = "array") {
+//     if (type === "array") {
+//       console.log(this.answers);
+//     } else if (type === "string") {
+//       console.log(`Poll results are ${this.answers.join(", ")}`);
+//     }
+//   },
+// };
+// document
+//   .querySelector(".poll")
+//   .addEventListener("click", poll.registerNewAnswer.bind(poll)); // question, why () without calling returned undefined!
+// // addeventlistener like functions will always point to the element that it;s attached to.. to fix this, we can use .bind(poll)
 
-// test data
-// § Data 1: [5, 2, 3]
-// § Data 2: [1, 5, 3, 9, 6, 1]
+// // test data
+// // § Data 1: [5, 2, 3]
+// // § Data 2: [1, 5, 3, 9, 6, 1]
 
-poll.displayResults.call({ answers: [3, 4, 5] }, "string");
-poll.displayResults.call({ answers: [3, 4, 5] });
+// poll.displayResults.call({ answers: [3, 4, 5] }, "string");
+// poll.displayResults.call({ answers: [3, 4, 5] });
 
 // ---------- The Bind Method --------------
 // const biman = {
