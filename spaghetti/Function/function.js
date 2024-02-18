@@ -1,4 +1,7 @@
 "use strict";
+
+// ------------- IIFE -----------------==
+
 // ---------- Coding Challenge #1 ---------------------
 // const poll = {
 //   question: "What is your favourite programming language?",
