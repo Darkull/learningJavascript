@@ -1,29 +1,30 @@
 "use strict";
 
 // ------------- IIFE -----------------==
-const runOnce = function () {
-  //   console.log("This will never run again.");
-};
-// but we can run this later at any point
-runOnce();
+// const runOnce = function () {
+//   //   console.log("This will never run again.");
+// };
+// // but we can run this later at any point
+// runOnce();
 
-// so to run a function only once we can do this
-(function () {
-  console.log("This will never run again");
-})();
-// by adding parenthesis we avoided an error aswell as converted it to an expression
+// // so to run a function only once we can do this
+// (function () {
+//   console.log("This will never run again");
+// })();
+// // by adding parenthesis we avoided an error aswell as converted it to an expression
 
-// arrow function
-(() => console.log("This will also never run again"))();
+// // arrow function
+// (() => console.log("This will also never run again"))();
 
-// const or let inside of a codeblock, encapsulates variables.
-{
-  const isPrivate = "this variable is only accesible from this codeblock";
-  var isPrivateVar = "while this is accessible from outside too";
-}
+// // const or let inside of a codeblock, encapsulates variables.
+// {
+//   const isPrivate = "this variable is only accesible from this codeblock";
+//   var isPrivateVar = "while this is accessible from outside too";
+// }
 
-console.log(isPrivateVar);
-console.log(isPrivate);
+// console.log(isPrivateVar);
+// console.log(isPrivate); // isPrivate is not defined
+
 // ---------- Coding Challenge #1 ---------------------
 // const poll = {
 //   question: "What is your favourite programming language?",
