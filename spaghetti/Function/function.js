@@ -1,5 +1,56 @@
 "use strict";
 
+//Calculate the average score for each team, using the test data below
+
+const calculateAvg = function (value1, value2, value3) {
+  const average = (value1 + value2 + value3) / 3;
+  console.log(average);
+};
+
+// calculateAvg(96, 108, 89);
+// calculateAvg(88, 91, 110);
+
+// Compare the team's average scores to determine the winner of the competition,
+// and print it to the console. Don't forget that there can be a draw, so test for that
+// as well (draw means they have the same average score)
+// const dolphinScore = 0;
+// const koalaScore = -1;
+
+// if (dolphinScore === koalaScore) {
+//   console.log("The match was a draw");
+//   // TRUE && TRUE
+// } else if (dolphinScore > koalaScore && dolphinScore >= 100) {
+//   console.log("The match was won by dolphins");
+// } else if (dolphinScore < koalaScore && koalaScore >= 100) {
+//   console.log("The match was won by koala");
+// } else {
+//   console.log("something went wrong!");
+// }
+
+// --------- UNDERSTAND ( AND && ) ( OR || ) -----------
+// const dolphinScore = 900;
+// const koalaScore = 90;
+
+// // TRUE && FALSE = FALSE
+//   dolphinScore > koalaScore && dolphinScore <= 100
+
+//   // TRUE || False  =  TRUE
+//   dolphinScore > koalaScore || dolphinScore >= 100
+
+// const string = "2";
+// const number = 2;
+
+// ------------- Closures -----------------
+// const secureBooking = function () {
+//   let passengerCount = 0;
+
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+// const booker = secureBooking();
+
 // ------------- IIFE -----------------==
 // const runOnce = function () {
 //   //   console.log("This will never run again.");
