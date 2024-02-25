@@ -1,25 +1,27 @@
 "use strict";
 
 // ------------- Closures -----------------
-const secureBooking = function () {
-  let passengerCount = 0;
-  console.log("secure booking executed");
+// const secureBooking = function () {
+//   let passengerCount = 0;
+//   console.log("secure booking executed");
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
-  };
-};
-const booker = secureBooking();
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
 
-booker();
+// const booker = secureBooking();
 
-// Global Scope
-// secureBooking = </f>
-// booker = <f>
+// booker();
+// booker();
+// // Global Scope
+// // secureBooking = </f>
+// // booker = <f>
 
-// Call Stack -- order in which functins were called.
-// Scope Chain -- Order in which functions are written in code
+// // Call Stack -- order in which functins were called.
+// // Scope Chain -- Order in which functions are written in code
+// console.dir(booker);
 
 // ---------------------- Practise ---------------------------
 // Calculate the average score for each team, using the test data below
