@@ -1,5 +1,33 @@
 "use strict";
 
+// --------- more closures ------------
+let f;
+
+const g = function () {
+  const a = 20;
+
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+g();
+f();
+// 40
+console.dir(f);
+
+const h = function () {
+  const b = 40;
+
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+h();
+f();
+console.dir(f);
+
 // ------------- Closures -----------------
 // const secureBooking = function () {
 //   let passengerCount = 0;
