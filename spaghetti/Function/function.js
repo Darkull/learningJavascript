@@ -1,7 +1,15 @@
 "use strict";
+// -------- Coding challenge 2 --------------
+(function () {
+  const header = document.querySelector("h1");
+  header.style.color = "red";
+  document.querySelector("body").addEventListener("click", function () {
+    header.style.color = "blue";
+  });
+})();
 
 // --------- more closures ------------
-// example 1
+// // example 1
 // let f;
 
 // const g = function () {
@@ -29,19 +37,20 @@
 // f();
 // console.dir(f);
 
-// example 2
-const boardPassengers = function (n, wait) {
-  const perGroup = n / 3;
+// // example 2
+// const boardPassengers = function (n, wait) {
+//   const perGroup = n / 3;
 
-  setTimeout(() => {
-    console.log(`We are now boarding all ${n} passengers`);
-    console.log(`There are 3 groups, each with ${perGroup} passenger`);
-  }, wait * 1000);
+//   setTimeout(() => {
+//     console.log(`We are now boarding all ${n} passengers`);
+//     console.log(`There are 3 groups, each with ${perGroup} passenger`);
+//   }, wait * 1000);
 
-  console.log(`Will start boarding in ${wait} seconds`);
-};
+//   console.log(`Will start boarding in ${wait} seconds`);
+// };
 
-boardPassengers(180, 2);
+// // const perGroup = 1000; // closure has priority
+// boardPassengers(180, 2);
 
 // ------------- Closures -----------------
 // const secureBooking = function () {
