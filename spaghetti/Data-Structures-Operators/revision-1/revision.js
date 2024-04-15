@@ -29,13 +29,24 @@ const restaurant =  {
       },
 };
 
+/////////////////////// mutating variables while destructuring objects
+let a = 200;
+let b = 300;
+
+const obj = {a: 3, b: 2, c: 1};
+const {a: d, b: e} = obj;
+console.log(d, e);
+
+
 ///////////////// Object DESTRUCTURING
 // const {name, location, categories, starterMenu, mainMenu, openingHours} = restaurant;
 // console.log(locations);
 
-const {name, starterMenu, openingHours} = restaurant;
-console.log(name, starterMenu, openingHours);
+// const {name: name2, starterMenu, openingHours, lmao = 'lol'} = restaurant;
+// console.log(lmao);
 
+// const {menu = [], starterMenu: againMenu} = restaurant;
+// console.log(menu, againMenu);
 
 ///////////////// ARRAY DESTRUCTURING
 
