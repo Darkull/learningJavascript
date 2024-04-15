@@ -29,13 +29,35 @@ const restaurant =  {
       },
 };
 
-/////////////////////// mutating variables while destructuring objects
-let a = 200;
-let b = 300;
+/////// nested objects
 
-const obj = {a: 3, b: 2, c: 1};
-const {a: d, b: e} = obj;
-console.log(d, e);
+// const {openingHours} = restaurant;
+// console.log(openingHours);
+
+// const {thu, fri} = openingHours;
+// console.log(thu, fri);
+
+// const {open, close} = fri;
+// console.log(open);
+
+// const {thu: {open: o, close: c}} = openingHours;
+// console.log(o, c);
+
+
+
+/////////////////////// mutating variables while destructuring objects
+// let a = 200;
+// let b = 300;
+// console.log(a, b);
+// const obj = {a: 3, b: 2, c: 1};
+// ({a, b} = obj);
+//  console.log(a, b);
+// const {a: d, b: e} = obj;
+// console.log(d, e);
+
+
+
+
 
 
 ///////////////// Object DESTRUCTURING
