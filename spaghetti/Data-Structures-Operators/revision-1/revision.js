@@ -27,7 +27,36 @@ const restaurant =  {
           close: 24,
         },
       },
+
+      orderDelivery: function ({starterIndex = 1, mainIndex = 0, address = "home", time = "20:00"}) {
+        console.log(`Order Taken! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+
+      }, //this in a object
 };
+
+// // /////////////////////// practical example, use when needs a lot of parameters in a function
+
+// //this in a object
+
+// // calling the function from the object
+// restaurant.orderDelivery({
+//     starterIndex: 1,
+//     mainIndex: 0,
+//     address: 'mirpur 1',
+//     time: 9,
+// });
+
+// // output: Order Recieved! Dal vat and undefined will be delivered to mirpur 2, dhaka at 22:30
+// restaurant.orderDelivery({
+// address: "hotel le duna",
+// starterIndex: 1,
+// })
+
+// restaurant.orderDelivery({});
+// // other values will ba taken from the defaults
+
+
+
 
 /////// nested objects
 
