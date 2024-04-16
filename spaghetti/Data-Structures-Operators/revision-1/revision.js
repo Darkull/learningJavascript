@@ -32,7 +32,70 @@ const restaurant =  {
         console.log(`Order Taken! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
 
       }, //this in a object
+      orderPaste: function (ing1, ing2, ing3) {
+        return `here is ur pasta with ${ing1}, ${ing2}, ${ing3}`;
+      },
 };
+
+
+
+// Spread Operator
+// const ingredients = [prompt('ing1:'), prompt('ing2:'), prompt('ing3:')];
+
+// console.log(restaurant.orderPaste(...ingredients));
+
+///// spread operator on objects
+const newRestaurant = {
+    founder: "Alif Hossain",
+    foundedIn: 2002,
+    ...restaurant,
+}
+// console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'zabra restaurant';
+console.log(restaurantCopy);
+
+
+
+// const arr = [1, 2, 3];
+// const badNewArr = [-1, 0, arr[0], arr[1], 3]; // bad way of doing it
+// console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// const newMenu = [...restaurant.mainMenu, "Duck Curry"];
+// const [menuOne] = newMenu;
+// console.log(menuOne);
+// console.log(newMenu);
+
+
+// const copyCategories1 = restaurant.categories;
+// const copyCategories2 = [...restaurant.categories];
+// console.log(copyCategories2);
+// console.log(copyCategories1);
+
+// const mergedArr = [...copyCategories1, ...copyCategories2];
+// console.log(mergedArr);
+
+//  const programmerName = 'alif hossain';
+//  const letters = [...programmerName];
+//  console.log(letters);
+//  console.log(...letters);
+// //  console.log(`${...letters}`);
+
+
+// method, to order just pasta. pasta needs to have 3 ingredients,
+//
+
+
+// const ingredients = [prompt('Let\'s make pasta! Ingredietnt 1?:'), prompt('Let\'s make pasta! Ingredietnt 2?:'), prompt('Let\'s make pasta! Ingredietnt 3?:')]
+// console.log(ingredients);
+// notice that we have used a backslash.. It's called escape..
+
+
+
 
 // // /////////////////////// practical example, use when needs a lot of parameters in a function
 
