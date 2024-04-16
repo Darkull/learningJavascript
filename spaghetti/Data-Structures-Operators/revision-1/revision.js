@@ -35,7 +35,37 @@ const restaurant =  {
       orderPaste: function (ing1, ing2, ing3) {
         return `here is ur pasta with ${ing1}, ${ing2}, ${ing3}`;
       },
+      orderPizza: function (mainIng, ...optionalIng) {
+        console.log(mainIng);
+        console.log(optionalIng);
+      }
 };
+
+
+
+///////// Rest patterns and parameters
+restaurant.orderPizza('lemon');
+
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6, 7, 8];
+// console.log(a, b, others);
+
+// const [item1, item3, ...other2] = [...restaurant.categories, ...restaurant.mainMenu];
+// console.log(item1, other2);
+
+// const {fri, ...weekdays} = restaurant.openingHours;
+
+// console.log(weekdays);
+
+const add = function (...numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum = sum + numbers[i];
+    }
+    console.log(sum);
+}
+add(2, 3, 5, 6,7)
+const x = [3,4,5,66];
+add(...x);
 
 
 
@@ -45,16 +75,16 @@ const restaurant =  {
 // console.log(restaurant.orderPaste(...ingredients));
 
 ///// spread operator on objects
-const newRestaurant = {
-    founder: "Alif Hossain",
-    foundedIn: 2002,
-    ...restaurant,
-}
-// console.log(newRestaurant);
+// const newRestaurant = {
+//     founder: "Alif Hossain",
+//     foundedIn: 2002,
+//     ...restaurant,
+// }
+// // console.log(newRestaurant);
 
-const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'zabra restaurant';
-console.log(restaurantCopy);
+// const restaurantCopy = {...restaurant};
+// restaurantCopy.name = 'zabra restaurant';
+// console.log(restaurantCopy);
 
 
 
